@@ -27,7 +27,16 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
 } 
-
+.button {
+    width: 220px;
+    height: 55px;
+    border: none;
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: 0.5s;
+}
 
 /* Header style start */
 .header {
@@ -58,11 +67,6 @@ h1, h2, h3, h4, h5, h6 {
 .logo:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
-/* .header__navigation{
-    display: flex;
-    justify-content: space-evenly;
-}    */
-
 .navigation {
     display: flex;
     flex-wrap: wrap;
@@ -144,20 +148,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero section */
 .hero {
-    height: 820px;
-    padding-top: 160px;
-    padding-left: 80px;
-    padding-right: auto;
-    padding-bottom: 330px;
+    padding: 160px 860px 330px 80px;
     background-image: url(./assets/img/bg.jpg);
     background-position: center -90px;
     background-repeat: no-repeat;
 }
-.hero-info {
+.hero__info {
     width: 500px;
     height: 330px;
 }
-#hero-name {
+.hero__name {
     width: 500px;
     margin-top: 0;
     margin-bottom: 10px;
@@ -165,25 +165,17 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 120px;
     font-weight: 700;
 }
-#description {
+.hero__description {
     width: 470px;
     margin: 0 0 25px 0;
     font-size: 20px;
     line-height: 40px;
 }
-.btn-gold {
-    width: 220px;
-    height: 55px;
-    border: none;
-    font-family: inherit;
-    font-size: 20px;
-    line-height: 40px;
+.button_gold { 
     background-color: var(--secondary-color);
-    color: var(--black-color);
-    cursor: pointer;
-    transition: 0.5s;
+    color: var(--black-color); 
 }
-.btn-gold:hover {
+.button_gold:hover {
     color: var(--primary-color);
 }
 
