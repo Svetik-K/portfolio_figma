@@ -376,56 +376,67 @@ h1, h2, h3, h4, h5, h6 {
 /* Contact section styling */
 
 .contacts {
-    height: 700px;
-    padding: 60px 20px 0;
+    padding: 60px 20px 195px 970px;
     background-image: url(./assets/img/contacts.jpg);
     background-size: cover;
     background-position: center;   
 }
-.contact-form {
+.contact__form {
     width: 450px;
     height: 445px;
     margin-left: auto;
 }
-.contact-title {
+.contact__title {
     margin: 0;
     font-size: 40px;
     line-height: 80px;
     color: var(--secondary-color);
+    margin-bottom: 40px;
 }
 input, textarea {
     width: 450px;
+    padding: 5px 0 5px 20px;
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
-    background: transparent;
-}
-.email {
-    height: 50px;
-    margin-top: 40px;
     background: rgba(0, 0, 0, 0.5);
 }
-.phone {
-    height: 50px;
-    margin-top: 20px;
-    background: rgba(0, 0, 0, 0.5);
-}
-.message {
-    height: 100px;
-    margin-top: 20px;
-    resize: none;
-    font-family: inherit;
-    background: rgba(0, 0, 0, 0.5);
-}
-::placeholder {
-    padding-left: 20px;
+input:focus {
+    outline: none;
+    border: 2px solid var(--secondary-color);
     font-family: inherit;
     font-size: 20px;
     line-height: 40px;
     color: var(--secondary-color);
 }
-#message-btn {
-    margin-top: 26px;
+.email {
+    height: 50px;
+    margin-bottom: 20px;
 }
+.phone {
+    height: 50px;
+    margin-bottom: 20px;  
+}
+.message {
+    height: 100px;
+    resize: none;
+    font-family: inherit;
+    margin-bottom: 26px;
+}
+.message:focus {
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 40px;
+    color: var(--secondary-color);
+}
+::placeholder {
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 40px;
+    color: var(--secondary-color);
+}
+
 /* Main style end */
 
 /* Footer style start*/   
