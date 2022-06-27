@@ -30,7 +30,6 @@ h1, h2, h3, h4, h5, h6 {
 .button {
     width: 220px;
     height: 55px;
-    border: none;
     font-family: inherit;
     font-size: 20px;
     line-height: 40px;
@@ -188,7 +187,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
     line-height: 40px;
 }
-.button_gold { 
+.button_gold {
+    border: none; 
     background-color: var(--secondary-color);
     color: var(--black-color); 
 }
@@ -249,52 +249,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Portfolio section */
-.portfolio {
-    padding: 0 20px 0;
 
+.portfolio {
+    padding: 100px 20px 0;
 }
-.portfolio-title {
-    width: 220px;
-    text-align: center;
-    margin: 0; 
-    font-size: 40px;
-    line-height: 80px;
-    color: var(--secondary-color);
-    background-color: var(--black-color);
+.portfolio__title {
+    margin-bottom: 60px;
 }
-.portfolio-title.rus {
-    width: 250px;
-}
-.btn-group {
+.portfolio__buttons {
     display: flex;
     justify-content: center;
     gap: 5px;
+    margin-bottom: 60px;
 }
-.btn-black {
-    width: 220px;
-    height: 55px;
+.button_black {
     border: 2px solid var(--secondary-color);
-    font-family: inherit;
-    font-size: 20px;
-    line-height: 40px;
     background-color: transparent;
     color: var(--secondary-color);
-    cursor: pointer;
-    transition: 0.5s;
 }
-.btn-black:hover {
+.button_black:hover {
     color: var(--primary-color);
 }
-.portfolio-btn.active {
+.button.active {
     color: var(--black-color);
     background-color: var(--secondary-color);
 }
-.portfolio-images {
+.portfolio__images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 60px;
     gap: 25px;
+}
+.portfolio__images img {
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+.portfolio__images img:hover {
+    transform: scale(1.04); 
 }
 
 
