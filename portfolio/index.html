@@ -9,46 +9,45 @@
     <title>portfolio</title>
 </head>
 <body>
-    <header class="header">
-        <div class="header__wrapper">
-            <div class="logo">
-                <a href="#">
-                    <img src="assets/svg/logo.svg" alt="logo">
-                </a>    
-            </div>
-            <nav class="header__navigation">
-                <ul class="navigation">
-                    <li class="navigation__item"><a href="#skills" class="navigation__link" data-i18="skills">Skills</a></li>
-                    <li class="navigation__item"><a href="#portfolio" class="navigation__link" data-i18="portfolio">Portfolio</a></li>
-                    <li class="navigation__item"><a href="#video" class="navigation__link" data-i18="video">Video</a></li>
-                    <li class="navigation__item"><a href="#price" class="navigation__link" data-i18="price">Price</a></li>
-                    <li class="navigation__item"><a href="#contacts" class="navigation__link" data-i18="contacts">Contacts</a></li>
-                </ul>
-            </nav>
-            <div class="switch-language">
-                <div class="switch-language__item" id="en" data-lang="en">en</div>
-                <div class="switch-language__item" id="dash">/</div>
-                <div class="switch-language__item" id="ru"  data-lang="ru">ru</div>
-            </div> 
-            <div class="theme-switch">
-                <a href="#" class="day">
-                    <img src="assets/svg/carbon_sun.svg" alt="sun">
-                </a>
-                <a href="#" class="night">
-                    <img src="assets/svg/Vector.svg" alt="sun">
-                </a>    
-            </div>
-            <div class="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </div>     
-        </div>   
-    </header>
-
-    <main class="main">
-        <div class="main-container">
-
+    <div class="container">
+        <header class="header">
+            <div class="header__wrapper">
+                <div class="logo">
+                    <a href="#">
+                        <img src="assets/svg/logo.svg" alt="logo">
+                    </a>    
+                </div>
+                <nav class="header__navigation">
+                    <ul class="navigation">
+                        <li class="navigation__item"><a href="#skills" class="navigation__link" data-i18="skills">Skills</a></li>
+                        <li class="navigation__item"><a href="#portfolio" class="navigation__link" data-i18="portfolio">Portfolio</a></li>
+                        <li class="navigation__item"><a href="#video" class="navigation__link" data-i18="video">Video</a></li>
+                        <li class="navigation__item"><a href="#price" class="navigation__link" data-i18="price">Price</a></li>
+                        <li class="navigation__item"><a href="#contacts" class="navigation__link" data-i18="contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div class="switch-language">
+                    <div class="switch-language__item" id="en" data-lang="en">en</div>
+                    <div class="switch-language__item" id="dash">/</div>
+                    <div class="switch-language__item" id="ru"  data-lang="ru">ru</div>
+                </div> 
+                <div class="theme-switch">
+                    <a href="#" class="day">
+                        <img src="assets/svg/carbon_sun.svg" alt="sun">
+                    </a>
+                    <a href="#" class="night">
+                        <img src="assets/svg/Vector.svg" alt="sun">
+                    </a>    
+                </div>
+                <div class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>     
+            </div>   
+        </header>
+    
+        <main class="main">
             <section class="hero" id="hero">
                 <div class="hero__info">
                     <h1 class="hero__name" data-i18="hero-title">Alexa Rise</h1>
@@ -56,7 +55,7 @@
                     <button class="button button_gold" type="button" data-i18="hire">Hire me</button>
                 </div>    
             </section>
-
+    
             <section class="skills" id="skills">   
                 <h2 class="skills__title title_lined" data-i18="skills">Skills</h2>
                 <div class="skills__items">
@@ -95,7 +94,7 @@
                     <img src="assets/img/portfolio-img6.jpg" alt="girl with smartphone" class="image-example">
                 </div>
             </section>
-
+    
             <section class="video" id="video">
                 <h2 class="video__title title_lined" data-i18="video">Video</h2>           
                 <div class="video__player">
@@ -103,12 +102,12 @@
                     <button class="button-play" type="button"></button>    
                 </div>
             </section>
-
+    
             <section class="price" id="price">
                 <h2 class="price__title title_lined" data-i18="price">Price</h2>          
                 <div class="price__variants">
                     <div class="price__item">
-                        <h3 class="prices-title">Standart</h3>
+                        <h3 class="prices-title">Standard</h3>
                         <h4 class="dollar-price">500 $</h4>
                         <div class="price-details">
                             <p class="detail" data-i18="price-description-1-span-1">One location</p>
@@ -145,7 +144,7 @@
                     </div>
                 </div>
             </section>
-
+    
             <section class="contacts" id="contacts">
                 <div class="contact__form">
                     <h2 class="contact__title" data-i18="contact-me">Contact me</h2>
@@ -154,39 +153,30 @@
                     <textarea  rows="6" cols="70" class="message" placeholder="Message"></textarea>
                     <button class="button button_gold" type="button" id="message-btn" data-i18="send-message">Send message</button>
                 </div>
-            </section>
-
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="copyright">
-                <div>&copy;</div>
-                <div>2022</div>
-                <div><a href="https://github.com/Svetik-K" target="_blank" id="github">svetik-k</a></div>
-            </div>
-            <div class="school">
-                <a href="https://rs.school/js-stage0/" target="_blank" id="school-name">Rolling Scopes School</a>
-            </div>
-            <div class="icons">
-                <ul class="icons-list">
-                    <li><a href="#" class="icon-item"><img src="assets/svg/inst.svg" alt="instagram"></a></li>
-                    <li><a href="#" class="icon-item"><img src="assets/svg/fb.svg" alt="facebook"></a></li>
-                    <li><a href="#" class="icon-item"><img src="assets/svg/twit.svg" alt="twitter"></a></li>
-                    <li><a href="#" class="icon-item"><img src="assets/svg/pint.svg" alt="pintrest"></a></li>
-                </ul> 
-            </div>
-            
-            
-        </div>
-    </footer>
+            </section>     
+        </main>
     
-
-
-
-
-
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="copyright">
+                    <div>&copy;</div>
+                    <div>2022</div>
+                    <div><a href="https://github.com/Svetik-K" target="_blank" id="github">svetik-k</a></div>
+                </div>
+                <div class="school">
+                    <a href="https://rs.school/js-stage0/" target="_blank" id="school-name">Rolling Scopes School</a>
+                </div>
+                <div class="footer__icons">
+                    <ul class="icons">
+                        <li><a href="#" class="icon-item"><img src="assets/svg/inst.svg" alt="instagram"></a></li>
+                        <li><a href="#" class="icon-item"><img src="assets/svg/fb.svg" alt="facebook"></a></li>
+                        <li><a href="#" class="icon-item"><img src="assets/svg/twit.svg" alt="twitter"></a></li>
+                        <li><a href="#" class="icon-item"><img src="assets/svg/pint.svg" alt="pintrest"></a></li>
+                    </ul> 
+                </div> 
+            </div>
+        </footer>
+    </div>
 
     <script src="index.js"></script>
 </body>
