@@ -84,8 +84,8 @@ const i18Obj = {
 
 // Hamburger menu
 const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".header-nav");
-const navLink = document.querySelectorAll(".nav-link");
+const navMenu = document.querySelector(".header__navigation");
+const navLink = document.querySelectorAll(".navigation__link");
 
 hamburger.addEventListener('click', mobileMenu);
 
@@ -103,13 +103,13 @@ function closeMenu() {
 
 // Change images
 const portfolioImgs = document.querySelectorAll('.image-example');
-const portfolioBtn = document.querySelectorAll('.portfolio-btn');
+const portfolioBtn = document.querySelectorAll('.portfolio-button');
 
 portfolioBtn.forEach(button => button.addEventListener('click', changeImage));
 portfolioBtn.forEach(button => button.addEventListener('click', changeClassActive));
 
 function changeImage(e) {    
-    if(e.target.classList.contains('portfolio-btn')) {
+    if(e.target.classList.contains('portfolio-button')) {
         const season = this.dataset.season;
         portfolioImgs.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.jpg`);
     }
@@ -117,7 +117,7 @@ function changeImage(e) {
 
 function changeClassActive() {
     portfolioBtn.forEach((button) => button.classList.remove("active"));
-    this.classList.toggle("active");
+    this.classList.add("active");
 }
 
 // Перевод страницы
