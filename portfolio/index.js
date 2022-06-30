@@ -84,8 +84,8 @@ const i18Obj = {
 
 // Hamburger menu
 const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".header-nav");
-const navLink = document.querySelectorAll(".nav-link");
+const navMenu = document.querySelector(".header__navigation");
+const navLink = document.querySelectorAll(".navigation__link");
 
 hamburger.addEventListener('click', mobileMenu);
 
@@ -103,13 +103,13 @@ function closeMenu() {
 
 // Change images
 const portfolioImgs = document.querySelectorAll('.image-example');
-const portfolioBtn = document.querySelectorAll('.portfolio-btn');
+const portfolioBtn = document.querySelectorAll('.portfolio-button');
 
 portfolioBtn.forEach(button => button.addEventListener('click', changeImage));
 portfolioBtn.forEach(button => button.addEventListener('click', changeClassActive));
 
 function changeImage(e) {    
-    if(e.target.classList.contains('portfolio-btn')) {
+    if(e.target.classList.contains('portfolio-button')) {
         const season = this.dataset.season;
         portfolioImgs.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.jpg`);
     }
@@ -117,71 +117,40 @@ function changeImage(e) {
 
 function changeClassActive() {
     portfolioBtn.forEach((button) => button.classList.remove("active"));
-    this.classList.toggle("active");
+    this.classList.add("active");
 }
-
-// Перевод страницы
-
-const languages = document.querySelector('.switch-lang');
-const lengthsChanges = [document.querySelector('.skills-title'), document.querySelector('.portfolio-title')];
-
-languages.addEventListener('click', changeLanguage);
-
-function changeLanguage(e) {
-	if (e.target.dataset.lang) {
-		language = e.target.dataset.lang;
-		getTranslate(language);
-    changeClassActiveLanguage();
-	}
-}
-
-function getTranslate(lang) {
-  const dataForTranslation = document.querySelectorAll('[data-i18]');
-  dataForTranslation.forEach((item) => item.textContent = i18Obj[lang][item.dataset.i18]);
-  changeClassActiveLanguage();
-}
-
-function changeClassActiveLanguage() {
-  document.querySelector('.lang-item active').classList.remove("active");
-  this.classList.add("active");
-}
-
-function setLocalStorage() {
-  localStorage.setItem('language', language);
-}
-window.addEventListener('beforeunload', setLocalStorage);
-
-function getLocalStorage() {
-  if(localStorage.getItem('language')) {
-    let language = localStorage.getItem('language');
-    getTranslate(language);
-  }
-}
-window.addEventListener('load', getLocalStorage);
 
 // Light theme
+
+document.addEventListener('DOMContentLoaded', getStorageTheme);
+
+let theme = 'dark';
+
+function setStorageTheme() {
+  localStorage.setItem('theme', theme);
+};
+
+function getStorageTheme() {
+  if(theme === 'light') {
+    lightTheme();
+    sun.style.display = "none";
+    moon.style.display = "block";
+  }
+};
+
 const itemsForChange = [document.querySelector('.skills'),
 document.querySelector('.portfolio'),
 document.querySelector('.video'),
 document.querySelector('.price'),
-document.querySelector('.skills-title'),
-document.querySelector('.portfolio-title'),
-document.querySelector('.video-title'),
-document.querySelector('.price-title'),
-// document.querySelector('.header-nav')
 ];
-const navLinks = document.querySelectorAll('.nav-link');
+
 const priceTitles = document.querySelectorAll('.prices-title');
 const priceDetails = document.querySelectorAll('.detail');
 const themeSwitch = document.querySelector('.theme-switch');
-const wrappers = document.querySelectorAll('.wrapper');
-const titleWraps = document.querySelectorAll('.title-wrapper');
 const moon = document.querySelector('.night');
 const sun = document.querySelector('.day');
 
-let theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark' ;
-
-themeSwitch.addEventListener('click', lightTheme);
+themeSwitch.addEventListener('click', lightTheme); 
 
 moon.addEventListener('click', function(e) {
   moon.style.display = "none";
@@ -195,26 +164,50 @@ sun.addEventListener('click', function(e) {
   e.preventDefault();
 });
 
-
 function lightTheme() {
-  wrappers.forEach(item => item.classList.toggle('light-theme'));
-  titleWraps.forEach(item => item.classList.toggle('light-theme'));
   priceTitles.forEach(item => item.classList.toggle('light-theme'));
   priceDetails.forEach(item => item.classList.toggle('light-theme'));
   itemsForChange.forEach(item => item.classList.toggle('light-theme'));
   portfolioBtn.forEach(button => button.classList.toggle('light-theme'));
-  // navLinks.forEach(button => button.classList.toggle('light-theme'));
- 
+  setStorageTheme;
 }
 
-function setStorageTheme() {
-  localStorage.setItem('theme', theme);
-};
 
-function getStorageTheme() {
-  if(localStorage.getItem('theme') === 'light') {
-    lightTheme();
-    sun.style.display = "none";
-    moon.style.display = "block";
-  }
-};
+// Перевод страницы
+
+// const languages = document.querySelector('.switch-lang');
+// const lengthsChanges = [document.querySelector('.skills-title'), document.querySelector('.portfolio-title')];
+
+// languages.addEventListener('click', changeLanguage);
+
+// function changeLanguage(e) {
+// 	if (e.target.dataset.lang) {
+// 		language = e.target.dataset.lang;
+// 		getTranslate(language);
+//     changeClassActiveLanguage();
+// 	}
+// }
+
+// function getTranslate(lang) {
+//   const dataForTranslation = document.querySelectorAll('[data-i18]');
+//   dataForTranslation.forEach((item) => item.textContent = i18Obj[lang][item.dataset.i18]);
+//   changeClassActiveLanguage();
+// }
+
+// function changeClassActiveLanguage() {
+//   document.querySelector('.lang-item active').classList.remove("active");
+//   this.classList.add("active");
+// }
+
+// function setLocalStorage() {
+//   localStorage.setItem('language', language);
+// }
+// window.addEventListener('beforeunload', setLocalStorage);
+
+// function getLocalStorage() {
+//   if(localStorage.getItem('language')) {
+//     let language = localStorage.getItem('language');
+//     getTranslate(language);
+//   }
+// }
+// window.addEventListener('load', getLocalStorage);
