@@ -577,8 +577,7 @@ input:focus {
     }
     /* Hamburger */
     .hamburger .line {
-        display: block;
-        
+        display: block;  
     }
     .hamburger.active .line:nth-child(2){
         opacity: 0;
@@ -854,50 +853,30 @@ input:focus {
    background-color: var(--primary-color);
    color: var(--black-color);
 }
-.header-nav.light-theme {
+.prices-title.light-theme {
+    color: var(--black-color);
+}
+.header__navigation.light-theme {
     background-color: var(--primary-color);
 }
 .nav-link.light-theme {
     color: var(--black-color);
 }
-.portfolio-btn.light-theme {
+.portfolio-button.light-theme {
   border: 2px solid var(--secondary-color);
   background-color: var(--primary-color);
   color: var(--black-color);
 }
-.portfolio-btn.light-theme:hover {
+.portfolio-button.light-theme:hover {
   background-color:var(--secondary-color);
   color: var(--primary-color);
 }
-.portfolio-btn.light-theme.active {
+.portfolio-button.light-theme.active {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
-.prices-title.light-theme {
-    color: var(--black-color);
-}
+
 .detail.light-theme {
     color: var(--black-color);
 }
-.skills-title.light-theme {
-    background-color: var(--primary-color);
-    color: var(--black-color);
-}
-.portfolio-title.light-theme {
-    background-color: var(--primary-color);
-    color: var(--black-color);
-}
-.video-title.light-theme {
-    background-color: var(--primary-color);
-    color: var(--black-color);
-}
-.price-title.light-theme {
-    background-color: var(--primary-color);
-    color: var(--black-color);
-}
-.title-wrapper.light-theme {
-    background-image: linear-gradient(to top, #fff 39px, #000 39px, #000 41px, #fff 41px); 
-}
-.wrapper.light-theme {
-    background-color: var(--primary-color);
-}
+
