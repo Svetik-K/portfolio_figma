@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #BDAE82;
+    --black-color: #000000;
+}
+
+.skills,
+.portfolio,
+.video,
+.price {
+   background-color: var(--black-color);
+   color: var(--primary-color);
+}
+
+.title_lined {
+    color: var(--secondary-color);
+}
+.title_lined::before {
+    background-color: var(--secondary-color);   
+}
+.title_lined::after {
+    background-color: var(--secondary-color);   
+}
+.button_black {
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+.button_black:hover {
+    color: var(--primary-color);
+}
+.button.active {
+    color: var(--black-color);
+    background-color: var(--secondary-color);
+}
+.prices-title {
+    color: var(--primary-color);
+}
+.dollar-price {
+    color: var(--secondary-color);
+}
+.detail {
+    color: var(--primary-color);
+}
