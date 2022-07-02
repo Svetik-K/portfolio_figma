@@ -1,0 +1,42 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #BDAE82;
+    --black-color: #000000;
+}
+
+.skills,
+.portfolio,
+.video,
+.price {
+   background-color: var(--primary-color);
+   color: var(--black-color);
+}
+
+.title_lined {
+    color: var(--black-color);
+}
+.title_lined::before {
+    background-color: var(--black-color);   
+}
+.title_lined::after {
+    background-color: var(--black-color);   
+}
+.portfolio-button {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--black-color);
+}
+.portfolio-button:hover {
+    background-color:var(--secondary-color);
+    color: var(--primary-color);
+}
+.portfolio-button.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.prices-title {
+    color: var(--black-color);
+}
+.detail {
+    color: var(--black-color);
+}
