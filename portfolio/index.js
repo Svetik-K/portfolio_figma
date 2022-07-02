@@ -1,4 +1,4 @@
-const i18Obj = {
+const translation = {
     'en': {
       'skills': 'Skills',
       'portfolio': 'Portfolio',
@@ -39,8 +39,48 @@ const i18Obj = {
       'contact-me': 'Contact me',
       'send-message': 'Send message'
     },
+    'se': {
+      'skills': 'Kompetens',
+      'portfolio': 'Portfolio',
+      'video': 'Video',
+      'price': 'Priser',
+      'contacts': 'Kontakter',
+      'hero-title': 'Alexa Rise',
+      'hero-text': 'Spara uppriktiga känslor, romantiska känslor och lyckliga stunder i livet tillsammans med den professionella fotografen Alexa Rise',
+      'hire': 'Anställa',
+      'skill-title-1': 'Digital fotografering',
+      'skill-text-1': 'Högkvalitativa bilder i studion och i naturen',
+      'skill-title-2': 'Videoinspelning',
+      'skill-text-2': 'Fånga dina ögonblick så att de alltid finns med dig',
+      'skill-title-3': 'Rotouch',
+      'skill-text-3': 'Jag strävar efter att få fotografi att överträffa verkligheten',
+      'skill-title-4': 'Audio',
+      'skill-text-4': 'Professionell ljudinspelning för video, reklam, portfölj',
+      'winter': 'Vinter',
+      'spring': 'Vår',
+      'summer': 'Sommar',
+      'autumn': 'Höst',
+      'price-description-1-span-1': 'En plats',
+      'price-description-1-span-2': '120 bilder i färg',
+      'price-description-1-span-3': '12 bilder i retusch',
+      'price-description-1-span-4': 'Beredskap 2-3 veckor',
+      'price-description-1-span-5': 'Smink, visage',
+      'price-description-2-span-1': 'En - två platser',
+      'price-description-2-span-2': '200 bilder i färg',
+      'price-description-2-span-3': '20 bilder i retusch',
+      'price-description-2-span-4': 'Beredskap 1-2 veckor',
+      'price-description-2-span-5': 'Smink, visage',
+      'price-description-3-span-1': 'Tre platser eller fler',
+      'price-description-3-span-2': '300 bilder i färg',
+      'price-description-3-span-3': '50 bilder i retusch',
+      'price-description-3-span-4': 'Beredskap en vecka',
+      'price-description-3-span-5': 'Smink, ansikte, frisyr',
+      'order': 'Boka fotografering',
+      'contact-me': 'Kontakta mig',
+      'send-message': 'Skicka meddelande'
+    },
     'ru': {
-      'skills': 'Навыки',
+      'skills': 'навыки',
       'portfolio': 'Портфолио',
       'video': 'Видео',
       'price': 'Цены',
@@ -86,19 +126,23 @@ const i18Obj = {
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".header__navigation");
 const navLink = document.querySelectorAll(".navigation__link");
+const layer = document.querySelector('.layer');
 
 hamburger.addEventListener('click', mobileMenu);
-
+navMenu.addEventListener('click', closeMenu);
 navLink.forEach((link) => link.addEventListener('click', closeMenu));
+layer.addEventListener('click', closeMenu);
 
 function mobileMenu() {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("open");
+  layer.classList.add('active');
 }
 
 function closeMenu() {
+  layer.classList.remove('active');
   hamburger.classList.remove("active");
-	navMenu.classList.remove("open");   
+	navMenu.classList.remove("open");
 }
 
 // Change images
@@ -121,93 +165,48 @@ function changeClassActive() {
 }
 
 // Light theme
+const themeSwitchers = document.querySelectorAll('.switcher');
+themeSwitchers.forEach(icon => icon.addEventListener('click', function() {
+  let theme = this.dataset.theme;
+  changeTheme(theme);
+}));
 
-document.addEventListener('DOMContentLoaded', getStorageTheme);
-
-let theme = 'dark';
-
-function setStorageTheme() {
-  localStorage.setItem('theme', theme);
-};
-
-function getStorageTheme() {
-  if(theme === 'light') {
-    lightTheme();
-    sun.style.display = "none";
-    moon.style.display = "block";
-  }
-};
-
-const itemsForChange = [document.querySelector('.skills'),
-document.querySelector('.portfolio'),
-document.querySelector('.video'),
-document.querySelector('.price'),
-];
-
-const priceTitles = document.querySelectorAll('.prices-title');
-const priceDetails = document.querySelectorAll('.detail');
-const themeSwitch = document.querySelector('.theme-switch');
-const moon = document.querySelector('.night');
-const sun = document.querySelector('.day');
-
-themeSwitch.addEventListener('click', lightTheme); 
-
-moon.addEventListener('click', function(e) {
-  moon.style.display = "none";
-  sun.style.display = "block";
-  e.preventDefault();
-});
-
-sun.addEventListener('click', function(e) {
-  sun.style.display = "none";
-  moon.style.display = "block";
-  e.preventDefault();
-});
-
-function lightTheme() {
-  priceTitles.forEach(item => item.classList.toggle('light-theme'));
-  priceDetails.forEach(item => item.classList.toggle('light-theme'));
-  itemsForChange.forEach(item => item.classList.toggle('light-theme'));
-  portfolioBtn.forEach(button => button.classList.toggle('light-theme'));
-  setStorageTheme;
+function changeTheme(theme) {
+  document.querySelector('[title="theme"]').setAttribute('href', `${theme}-theme.css`);
+  themeSwitchers.forEach(icon => {
+        icon.style.display = 'block'; 
+  });
+  document.querySelector(`[data-theme="${theme}"]`).style.display = 'none'; 
 }
 
+let activeTheme = localStorage.getItem('theme'); 
+
+if(activeTheme === null || activeTheme === 'light') { 
+    changeTheme('light');
+} else if (activeTheme === 'dark') { 
+    changeTheme('dark');
+}
 
 // Перевод страницы
+const swedish = document.querySelector('.se');
+const english = document.querySelector('.en');
 
-// const languages = document.querySelector('.switch-lang');
-// const lengthsChanges = [document.querySelector('.skills-title'), document.querySelector('.portfolio-title')];
+swedish.addEventListener('click', (e) => {
+  getTranslate('se');
+  swedish.classList.add('active');
+  english.classList.remove('active');
+  preventDefault(e);
+});
 
-// languages.addEventListener('click', changeLanguage);
+english.addEventListener('click', (e) => {
+  getTranslate('en');
+  english.classList.add('active');
+  swedish.classList.remove('active');
+  preventDefault(e);
+});
 
-// function changeLanguage(e) {
-// 	if (e.target.dataset.lang) {
-// 		language = e.target.dataset.lang;
-// 		getTranslate(language);
-//     changeClassActiveLanguage();
-// 	}
-// }
+function getTranslate(lang) {
+  const dataForTranslation = document.querySelectorAll('[data-i18]');
+  dataForTranslation.forEach((item) => item.textContent = translation[lang][item.dataset.i18]);
+}
 
-// function getTranslate(lang) {
-//   const dataForTranslation = document.querySelectorAll('[data-i18]');
-//   dataForTranslation.forEach((item) => item.textContent = i18Obj[lang][item.dataset.i18]);
-//   changeClassActiveLanguage();
-// }
-
-// function changeClassActiveLanguage() {
-//   document.querySelector('.lang-item active').classList.remove("active");
-//   this.classList.add("active");
-// }
-
-// function setLocalStorage() {
-//   localStorage.setItem('language', language);
-// }
-// window.addEventListener('beforeunload', setLocalStorage);
-
-// function getLocalStorage() {
-//   if(localStorage.getItem('language')) {
-//     let language = localStorage.getItem('language');
-//     getTranslate(language);
-//   }
-// }
-// window.addEventListener('load', getLocalStorage);

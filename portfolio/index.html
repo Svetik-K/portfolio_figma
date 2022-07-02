@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico"/>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" title="theme" href="#">
     <title>portfolio</title>
 </head>
 <body>
@@ -26,13 +27,13 @@
                 </ul>
             </nav>
             <div class="switch-language">
-                <div class="switch-language__item" id="en" data-lang="en">en</div>
-                <div class="switch-language__item" id="dash">/</div>
-                <div class="switch-language__item" id="ru"  data-lang="ru">ru</div>
+                <div class="switch-language__item en" data-lang="en">en</div>
+                <div>/</div>
+                <div class="switch-language__item se" data-lang="se">se</div>
             </div> 
             <div class="theme-switch">
-                <img src="assets/svg/carbon_sun.svg" alt="sun" class="day">
-                <img src="assets/svg/Vector.svg" alt="sun" class="night">
+                <img src="assets/svg/carbon_sun.svg" alt="sun" class="switcher day" data-theme="light">
+                <img src="assets/svg/Vector.svg" alt="moon" class="switcher night" data-theme="dark">
             </div>
             <div class="hamburger">
                 <span class="line"></span>
@@ -41,7 +42,7 @@
             </div>     
         </div>   
     </header>
-
+    <div class="layer"></div> 
     <main class="main">
         <section class="hero" id="hero">
             <div class="wrapper hero__wrapper">
